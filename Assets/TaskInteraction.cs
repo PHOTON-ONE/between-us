@@ -7,24 +7,25 @@ public class TaskInteraction : MonoBehaviour
     public Canvas taskUI;
     private Collider2D collid;
     public string taskName;
+
+    private void Start()
+    {
+        btn.onClick.AddListener(OpenTaskUI);
+    }
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.tag == "Task")
         {
             collid = coll;
-            taskName = this.collid.name;
-            btn.onClick.AddListener(OpenTaskUI);  
+            taskName = this.collid.name;       
             btn.interactable = true;
-            Debug.Log("Enter");
+            Debug.Log("Enter task");
         }
     }
     private void OnTriggerExit2D(Collider2D coll)
     {
-        if(coll.tag == "Task")
-        {
             btn.interactable = false;
-            Debug.Log("Exit");
-        }
+            Debug.Log("Exit task");
     }
 
     void OpenTaskUI()
