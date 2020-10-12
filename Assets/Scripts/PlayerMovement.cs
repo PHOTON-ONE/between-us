@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public Animator animator;
     public Transform rotate;
+    [HideInInspector]
+    public bool isMoving;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -20,17 +22,19 @@ public class PlayerMovement : MonoBehaviour
         {
             rotate.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         }
-        else
+        else if (horizontal > 0)
         {
             rotate.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
         if ((vertical != 0) || (horizontal != 0))
         {
             animator.SetBool("IsWalking", true);
+            isMoving = true;
         }
         else 
         {
-            animator.SetBool("IsWalking", false); 
+            animator.SetBool("IsWalking", false);
+            isMoving = false;
         }
         rb2d.AddForce(movement * speed * Time.fixedDeltaTime);
     }
