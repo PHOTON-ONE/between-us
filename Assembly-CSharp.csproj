@@ -57,10 +57,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\TaskInteraction.cs" />
     <Compile Include="Assets\Scripts\GroundType.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Sounds.cs" />
     <Compile Include="Assets\Scripts\Task_LockHiddenCode.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Sounds.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
