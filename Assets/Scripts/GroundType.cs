@@ -14,14 +14,22 @@ public class GroundType : MonoBehaviour
     {
         timeCount = delay;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        ground = collision.name;
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        ground = "Default";
+        if (collision.tag == "Floor")
+        {
+            ground = "Default";
+        }
+
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if ((collision.tag == "Floor")&&(ground!=collision.name))
+        {
+            ground = collision.name;
+        }
+    }
+    
     private void Update()
     {
         PlaySounds();
@@ -38,6 +46,18 @@ public class GroundType : MonoBehaviour
                     index = 1;
                 }
                 FindObjectOfType<AudioManager>().Play("Grass" + index);
+                index++;
+            }
+        }
+        if ((ground == "Metal") && (player.isMoving))
+        {
+            if (!SetDelay())
+            {
+                if (index > 4)
+                {
+                    index = 1;
+                }
+                FindObjectOfType<AudioManager>().Play("Metal" + index);
                 index++;
             }
         }
