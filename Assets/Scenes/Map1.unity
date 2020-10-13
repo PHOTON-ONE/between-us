@@ -430,7 +430,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005561292, y: -0.54161465}
+  m_Offset: {x: 0.005561292, y: -0.5088525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -441,7 +441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3641454, y: 0.039117575}
+  m_Size: {x: 0.51061165, y: 0.104641914}
   m_EdgeRadius: 0
 --- !u!114 &626513069
 MonoBehaviour:
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 339900082}
-  delay: 0.35
+  delay: 0.3
   ground: Default
 --- !u!1 &1213461415
 GameObject:
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 1343097706}
   m_Layer: 0
   m_Name: Metal
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,7 +601,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2239751, y: -0.16104937}
+  m_Offset: {x: 0.3539285, y: 0.39556676}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -612,7 +612,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4479492, y: 2.9043655}
+  m_Size: {x: 1.7078565, y: 1.7911333}
   m_EdgeRadius: 0
 --- !u!1 &1590122575
 GameObject:
@@ -1088,30 +1088,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Grass5
     clip: {fileID: 8300000, guid: cd9685d33f3897f4a96fa38112090b20, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Metal1
-    clip: {fileID: 8300000, guid: 2cd8b2a66cdfd8642b0a998e1d4f0f02, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Metal2
-    clip: {fileID: 8300000, guid: 19b6a1827a716cd42b7daf1aeec2c04e, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Metal3
-    clip: {fileID: 8300000, guid: 72fab5b07c7a57c4684f1d82dcfd95aa, type: 3}
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Metal4
-    clip: {fileID: 8300000, guid: 532c0ed51477b3948ae2196cc8705adc, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
