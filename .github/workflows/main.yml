@@ -58,26 +58,26 @@ jobs:
           run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile ./.github/Unity_v2020.x.ulf || exit 0
         
         # Build Windows and WebGL
-        # - name: Build Windows Player
-        #   run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -buildWindows64Player ./bin-win64/CISample.exe
-        - name: Build WebGL Player
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod WebGLBuilder.build
+        - name: Build Windows Player
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -buildWindows64Player ./bin-win64/CISample.exe
+        # - name: Build WebGL Player
+        #   run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod WebGLBuilder.build
 
-        - name: Deploy project
-          uses: JamesIves/github-pages-deploy-action@3.7.1
-          with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            BRANCH: gh-pages # The branch the action should deploy to.
-            FOLDER: builds/WebGLversion/ # The folder the action should deploy.
-            CLEAN: true
-
-        # - name: Archive Windows Build
-        #   uses: actions/upload-artifact@v1
+        # - name: Deploy project
+        #   uses: JamesIves/github-pages-deploy-action@3.7.1
         #   with:
-        #     name: CISampleWin64Binary
-        #     path: ./bin-win64
-        - name: Archive WebGL Build
+        #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #     BRANCH: gh-pages # The branch the action should deploy to.
+        #     FOLDER: builds/WebGLversion/ # The folder the action should deploy.
+        #     CLEAN: true
+
+        - name: Archive Windows Build
           uses: actions/upload-artifact@v1
           with:
-            name: CISampleWebGLBinary
-            path: ./builds/WebGLversion
+            name: CISampleWin64Binary
+            path: ./bin-win64
+        # - name: Archive WebGL Build
+        #   uses: actions/upload-artifact@v1
+        #   with:
+        #     name: CISampleWebGLBinary
+        #     path: ./builds/WebGLversion
