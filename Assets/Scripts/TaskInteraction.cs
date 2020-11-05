@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class TaskInteraction : MonoBehaviour
 {
     public Button btn;
-    public Canvas taskUI;
-    private Collider2D collid;
+    public UISelector UISelector;
     public string taskName;
+    Canvas taskUI;
 
     private void Start()
     {
@@ -16,9 +16,10 @@ public class TaskInteraction : MonoBehaviour
     {
         if(coll.tag == "Task")
         {
-            collid = coll;
-            taskName = this.collid.name;       
+            taskUI = coll.GetComponent<UISelector>().ConnectedUI;
+            taskName = coll.name;       
             btn.interactable = true;
+            Debug.Log(taskUI);
             Debug.Log("Enter task");
         }
     }
