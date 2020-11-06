@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool canMove;
     public Rigidbody2D rb2d;
     public float speed;
     public Animator animator;
@@ -12,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         rotate = GetComponent<Transform>();
+        canMove = false;
     }
     void FixedUpdate()
     {
+        if (!canMove) return;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector2 movement = new Vector2(horizontal, vertical);

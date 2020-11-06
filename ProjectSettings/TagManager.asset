@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Task
   - Floor
+  - Menu
   layers:
   - Default
   - TransparentFX
