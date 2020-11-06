@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Experimental.Rendering;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TaskInteraction : MonoBehaviour
 {
+    public PlayerMovement movement;
     public Button btn;
     public UISelector UISelector;
     public string taskName;
+    public KeyCode InteractionButton;
+    bool isInTask=false;
     Canvas taskUI;
 
     private void Start()
@@ -17,18 +21,32 @@ public class TaskInteraction : MonoBehaviour
         if(coll.tag == "Task")
         {
             taskUI = coll.GetComponent<UISelector>().ConnectedUI;
-            taskName = coll.name;       
+            taskName = coll.name;
+            isInTask = true;
             btn.interactable = true;
-            Debug.Log(taskUI);
-            Debug.Log("Enter task");
         }
     }
     private void OnTriggerExit2D(Collider2D coll)
     {    
         if (coll.tag == "Task")
         {
+            isInTask = false;
             btn.interactable = false;
-            Debug.Log("Exit task");
+        }
+        if (taskUI.enabled)
+        {
+                btn.interactable = true;
+                isInTask = true;
+        }
+    }
+    private void Update()
+    {
+        if (isInTask)
+        {
+            if (Input.GetKeyDown(InteractionButton))
+            {
+                OpenTaskUI();
+            }
         }
     }
 
@@ -36,10 +54,12 @@ public class TaskInteraction : MonoBehaviour
     {
         if (!taskUI.enabled)
         {
+            movement.enabled = false;
             taskUI.enabled = true;
         }
         else if (taskUI.enabled)
         {
+            movement.enabled = true;
             taskUI.enabled = false;
         }
     }

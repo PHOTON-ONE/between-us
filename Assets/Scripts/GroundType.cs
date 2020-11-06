@@ -37,7 +37,7 @@ public class GroundType : MonoBehaviour
     public void PlaySounds()
     {
         
-        if ((ground == "Default") && (player.isMoving))
+        if ((ground == "Default") && (player.isMoving) && (player.enabled))
         {
             if(!SetDelay())
             {
@@ -49,7 +49,7 @@ public class GroundType : MonoBehaviour
                 index++;
             }
         }
-        if ((ground == "Metal") && (player.isMoving))
+        if ((ground == "Metal") && (player.isMoving) && (player.enabled))
         {
             if (!SetDelay())
             {
