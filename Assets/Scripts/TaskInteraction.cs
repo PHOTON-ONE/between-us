@@ -10,6 +10,7 @@ public class TaskInteraction : MonoBehaviour
     public string taskName;
     public KeyCode InteractionButton;
     bool isInTask=false;
+    bool isOutTaskArea = false;
     Canvas taskUI;
 
     private void Start()
@@ -37,6 +38,7 @@ public class TaskInteraction : MonoBehaviour
         {
                 btn.interactable = true;
                 isInTask = true;
+                isOutTaskArea = true;
         }
     }
     private void Update()
@@ -61,6 +63,11 @@ public class TaskInteraction : MonoBehaviour
         {
             movement.enabled = true;
             taskUI.enabled = false;
+            if (isOutTaskArea)
+            {
+                btn.interactable = false;
+                isInTask = false;
+            }
         }
     }
 }
