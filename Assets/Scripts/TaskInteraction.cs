@@ -67,6 +67,7 @@ public class TaskInteraction : MonoBehaviour
             {
                 btn.interactable = false;
                 isInTask = false;
+                isOutTaskArea = false;
             }
         }
     }
