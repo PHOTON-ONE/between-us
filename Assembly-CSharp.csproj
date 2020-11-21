@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Task_LockHiddenCode.cs" />
     <Compile Include="Assets\Scripts\UISelector.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\SafeConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
